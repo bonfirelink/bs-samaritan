@@ -1,0 +1,21 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+web3 = "*"
+fastapi = "*"
+uvicorn = "*"
+
+[dev-packages]
+pylint = "*"
+autopep8 = "*"
+rope = "*"
+black = "*"
+
+[requires]
+python_version = "3.8"
+
+[pipenv]
+allow_prereleases = true
