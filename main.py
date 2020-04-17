@@ -13,11 +13,6 @@ app = FastAPI()
 with open("erc20abi.json") as f:
     erc20_abi = json.load(f)
 
-
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
-
 @app.post("/begs/")
 async def send_coins(beg: Beg):
 
