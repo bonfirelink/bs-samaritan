@@ -43,6 +43,7 @@ async def send_coins(beg: Beg):
 
     signed_txn = w3.eth.account.sign_transaction(bs_txn, private_key=private_key)
     broadcasted_txn = w3.eth.sendRawTransaction(signed_txn.rawTransaction)
+    print(repr(broadcasted_txn))
     return {"recipient": to_address, "tx_hash": signed_txn.hash.hex()}
 
 
