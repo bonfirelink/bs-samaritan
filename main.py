@@ -35,7 +35,7 @@ async def send_coins(beg: Beg):
     
     to_address = w3.toChecksumAddress(beg.recipient_address)
     bs = w3.eth.contract(address=w3.toChecksumAddress(contract_address), abi=erc20_abi)
-    nonce = w3.eth.getTransactionCount(from_address) + 1
+    nonce = w3.eth.getTransactionCount(from_address)
 
     bs_txn = bs.functions.transfer(to_address, 1).buildTransaction(
         {"chainId": 1, "gas": 70000, "gasPrice": w3.toWei("3", "gwei"), "nonce": nonce,}
