@@ -12,11 +12,13 @@ from gas_price import fetch_gas_price_forever
 environment = None
 erc20_abi = None
 
-gas_thread = threading.Thread(target=fetch_gas_price_forever)
+gas_thread = threading.Thread(target=fetch_gas_price_forever, daemon=True)
 gas_thread.start()
+
 
 class Beg(BaseModel):
     recipient_address: str
+
 
 app = FastAPI()
 
