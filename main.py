@@ -38,6 +38,7 @@ eth_api_url = environment["eth_api_url"]
 async def send_coins(beg: Beg):
     logging.info("I hear a beg")
     w3 = Web3(Web3.HTTPProvider(eth_api_url))
+    
     if w3.isAddress(beg.recipient_address) is not True:
         return {"bad address"}
 
