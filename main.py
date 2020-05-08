@@ -11,6 +11,7 @@ from gas_price import fetch_gas_price_forever
 
 environment = None
 erc20_abi = None
+
 gas_thread = threading.Thread(target=fetch_gas_price_forever)
 gas_thread.start()
 

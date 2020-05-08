@@ -1,7 +1,6 @@
 from web3 import Web3
 from web3.gas_strategies.time_based import slow_gas_price_strategy
 import json
-import sched
 import time
 import threading
 import logging
@@ -10,7 +9,7 @@ import os
 WAIT_TIME_SECONDS = 300
 
 def fetch_gas_price():
-    logging.info("Fetching new gas price")
+    logging.warning("Fetching new gas price")
     with open("env.json") as f:
         environment = json.load(f)
 
@@ -25,11 +24,10 @@ def fetch_gas_price():
     with open("gas_price.json", "w") as outfile:
         json.dump(data, outfile)
 
-    logging.info("Got a price of " + str(api_gas_price))
-
+    logging.info("Got a price of " + str(api_gas_price))    
 
 def fetch_gas_price_forever():
-    logging.info("Gas price thread start")
+    logging.warn("Gas price thread start")
     fetch_gas_price()
     ticker = threading.Event()
     while not ticker.wait(WAIT_TIME_SECONDS):
