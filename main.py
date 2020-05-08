@@ -6,7 +6,7 @@ import logging
 from pydantic import BaseModel
 from fastapi import FastAPI
 from web3 import Web3
-from web3.gas_strategies.time_based import slow_gas_price_strategy
+from web3.gas_strategies.time_based import medium_gas_price_strategy
 from gas_price import fetch_gas_price_forever
 
 environment = None
