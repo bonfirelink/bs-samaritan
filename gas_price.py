@@ -10,7 +10,7 @@ import os
 WAIT_TIME_SECONDS = 300
 
 def fetch_gas_price():
-    logging.warning("Fetching new gas price")
+    logging.info("Fetching new gas price")
     with open("env.json") as f:
         environment = json.load(f)
 
@@ -25,11 +25,11 @@ def fetch_gas_price():
     with open("gas_price.json", "w") as outfile:
         json.dump(data, outfile)
 
-    logging.warning("Got a price of " + str(api_gas_price))
+    logging.info("Got a price of " + str(api_gas_price))
 
 
 def fetch_gas_price_forever():
-    logging.warning("Gas price thread start")
+    logging.info("Gas price thread start")
     fetch_gas_price()
     ticker = threading.Event()
     while not ticker.wait(WAIT_TIME_SECONDS):
