@@ -2,3 +2,4 @@
 .vscode
 env.json
 gas_price.json
+__pycache__
