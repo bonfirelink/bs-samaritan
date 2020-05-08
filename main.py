@@ -55,7 +55,7 @@ async def send_coins(beg: Beg):
 
     signed_txn = w3.eth.account.sign_transaction(bs_txn, private_key=private_key)
     # broadcasted_txn = w3.eth.sendRawTransaction(signed_txn.rawTransacttion)
-    logging.warning("Transaction hex: " + repr(signed_txn.hash.hex()))
+    logging.info("Transaction hex: " + repr(signed_txn.hash.hex()))
     return {"recipient": to_address, "tx_hash": signed_txn.hash.hex()}
 
 
