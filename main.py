@@ -54,7 +54,7 @@ async def send_coins(beg: Beg):
     nonce = w3.eth.getTransactionCount(from_address)
 
     bs_txn = bs.functions.transfer(to_address, 1000).buildTransaction(
-        {"chainId": 1, "gas": 50000, "gasPrice": gas_price, "nonce": nonce,}
+        {"chainId": 1, "gas": 90000, "gasPrice": gas_price, "nonce": nonce,}
     )
 
     signed_txn = w3.eth.account.sign_transaction(bs_txn, private_key=private_key)
