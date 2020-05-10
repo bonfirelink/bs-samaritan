@@ -1,5 +1,4 @@
 .venv
 .vscode
-env.json
 config.ini
 __pycache__
