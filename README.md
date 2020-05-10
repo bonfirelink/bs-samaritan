@@ -8,8 +8,8 @@
 ## How to samaritan :
 
     Download the repo
-    Copy env.json.dist to env.json
-    Fill in env.json settings
+    Copy config.ini.dist to config.ini
+    Fill in config.ini settings
     Install dependencies : pipenv install
     Get in you venv : pipenv shell
     Start the api
