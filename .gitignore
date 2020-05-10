@@ -1,5 +1,5 @@
 .venv
 .vscode
 env.json
-gas_price.json
+config.ini
 __pycache__
